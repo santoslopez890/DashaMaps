@@ -15,18 +15,22 @@ class MyPairTest {
     }
 
     @Test
-    void getKey() {
-    }
-
-    @Test
     void setKey() {
-    }
-
-    @Test
-    void getValue() {
+        String expected = "Joe HuntingBurg";
+        MyPair pair = new MyPair("no",3);
+        pair.setKey(expected);
+        String actual= pair.getKey();
+        assertEquals(actual,expected);
     }
 
     @Test
     void setValue() {
+        Integer expected=115;
+        MyPair pair = new MyPair("no",3);
+        pair.setValue(expected);
+        Integer actual = pair.getValue();
+        assertEquals(actual,expected);
     }
+
+
 }
