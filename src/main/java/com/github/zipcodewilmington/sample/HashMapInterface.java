@@ -2,12 +2,12 @@ package com.github.zipcodewilmington.sample;
 
 public interface HashMapInterface {
     // fundamentals
-    public void set(String key, String value);
-    public String delete(String key);
-    public String get(String key);
-    public boolean isEmpty();
-    public long size();
+     void set(String key, Integer value);
+     Integer delete(String key);
+     Integer get(String key);
+     boolean isEmpty();
+     long size();
 
     // testing access
-    boolean bucketSize(String key); // used for tests
+    int bucketSize(String key); // used for tests
 }

@@ -84,7 +84,7 @@ public class MyLinkedListTest {
         mll.add(expectedKey,expectedValue);
         Integer actual=mll.remove("brent");
         //Then
-        assertEquals(expected, actual);
+        assertEquals(expectedValue, actual);
     }
 
 

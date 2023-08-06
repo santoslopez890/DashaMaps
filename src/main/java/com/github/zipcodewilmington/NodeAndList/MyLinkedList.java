@@ -47,17 +47,17 @@ public class MyLinkedList {
         return null;
     }
     public Integer remove(String key){
-        MyNode currentNode=head.getNext();
-        MyNode previousNode=head;
-        while (currentNode!=null && !currentNode.getData().getKey().equals(key)){
-            previousNode=currentNode;
-           currentNode=currentNode.getNext();
+        MyNode previousNode = head;
+        MyNode currentNode = head.getNext();
+        while(currentNode != null && !currentNode.getData().getKey().equals(key)){
+            previousNode = currentNode;
+            currentNode = currentNode.getNext();
         }
-
-        previousNode.setNext(currentNode.getNext( ));
-
-
-        return null;
+        if(currentNode == null){
+            return null;
+        }
+        previousNode.setNext(currentNode.getNext());
+        return currentNode.getData().getValue();
     }
 
 

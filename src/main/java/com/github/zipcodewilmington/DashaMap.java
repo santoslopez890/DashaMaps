@@ -1,15 +1,16 @@
 package com.github.zipcodewilmington;
 
 import com.github.zipcodewilmington.NodeAndList.MyLinkedList;
+import com.github.zipcodewilmington.sample.HashMapInterface;
 
 /**
  * @author xtofer
  * @version 1.0.0
  * @date 10/21/19 9:05 AM
  */
-public class DashaMap {
+public abstract class DashaMap implements HashMapInterface {
     protected MyLinkedList[] dash;
-    private String alphabet="abcdefghijklmnopqrstuvwxyz";
+    protected String alphabet="abcdefghijklmnopqrstuvwxyz";
 
     public DashaMap() {
         dash = new MyLinkedList[26];
@@ -37,10 +38,11 @@ public class DashaMap {
     }
 return totalSize;
 }
+@Override
 public int bucketSize(String key){
-        return dash[getBucketSize(key)].size();
+        return dash[getBucketIndex(key)].size();
 }
-    public int getBucketSize(String key){
+    public int getBucketIndex(String key){
         return alphabet.indexOf(key);
     }
 

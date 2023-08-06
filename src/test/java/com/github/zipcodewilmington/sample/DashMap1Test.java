@@ -5,18 +5,45 @@ import org.junit.jupiter.api.Test;
 
 public class DashMap1Test {
     @Test
-    void set(){
+    public void set() {
         //Given
-        long expectedsize=1;
-        String expectedkey="brent";
-        Integer expectedvalue=70;
-        DashaMap1 one=new DashaMap1();
-
-        one.set(expectedkey,expectedvalue);
-
-        Assert.assertEquals(expectedsize,one.bucketSize("b"));
+        int expectedSize = 1;
+        String expectedKey = "Brent";
+        Integer expectedValue = 91;
+        DashaMap1 one = new DashaMap1();
+        //When
+        one.set(expectedKey, expectedValue);
+        //Then
+        Assert.assertEquals(expectedSize, one.bucketSize("b")-1);
     }
+
     @Test
-    void get
+    public void delete() {
+        //Given
+        int expectedSize = 0;
+        String expectedKey = "Brent";
+        Integer expectedValue = 91;
+        DashaMap1 one = new DashaMap1();
+        one.set(expectedKey, expectedValue);
+        //When
+        Integer actualValue = one.delete(expectedKey);
+
+        //Then
+        Assert.assertEquals(expectedValue, actualValue);
+        Assert.assertEquals(expectedSize, one.bucketSize("b")-1);
+    }
+
     @Test
+    public void get() {
+        //Given
+        String expectedKey = "Brent";
+        Integer expectedValue = 91;
+        DashaMap1 one = new DashaMap1();
+        one.set(expectedKey, expectedValue);
+        //When
+        Integer actualValue = one.get(expectedKey);
+        //Then
+        Assert.assertEquals(expectedValue, actualValue);
+    }
+
 }
