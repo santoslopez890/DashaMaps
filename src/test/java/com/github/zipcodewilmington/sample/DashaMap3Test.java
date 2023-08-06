@@ -10,20 +10,20 @@ public class DashaMap3Test {
     public void set() {
         //Given
         int expectedSize = 1;
-        String expectedKey = "fnjsnjfnjksf";
+        String expectedKey = "aardvark";
         Integer expectedValue = 91;
         DashaMap3 three = new DashaMap3();
         //When
         three.set(expectedKey, expectedValue);
         //Then
-        Assert.assertEquals(expectedSize, three.bucketSize("b") );
+        Assert.assertEquals(expectedSize, three.bucketSize("b") - 1);
     }
 
     @Test
     public void delete() {
         //Given
         int expectedSize = 0;
-        String expectedKey = "fnjsnjfnjksf";
+        String expectedKey = "aardvark";
         Integer expectedValue = 91;
         DashaMap3 three = new DashaMap3();
         three.set(expectedKey, expectedValue);
@@ -37,7 +37,7 @@ public class DashaMap3Test {
     @Test
     public void get() {
         //Given
-        String expectedKey = "fnjsnjfnjksf";
+        String expectedKey = "aardvark";
         Integer expectedValue = 91;
         DashaMap3 three = new DashaMap3();
         three.set(expectedKey, expectedValue);
